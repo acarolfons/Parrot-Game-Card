@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF9BF;
+    height: 100vh;
+}
+
+.titulo {
+    position: absolute;
+    text-align: center;
+    top: 40px;
+
+}
+
+.titulo h1 {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #75B79E;
+}
+
+.tabuleiro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: calc(7 * 117px + 6 * 40px);
+}
+
+.carta {
+    width: 117px;
+    height: 146px;
+    perspective: 1000px; 
+}
+
+.conteudo-carta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; 
+    transition: transform 0.6s; 
+}
+
+.carta.virada .conteudo-carta {
+    transform: rotateY(180deg); 
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-frente {
+    background-color: #A7E9AF;
+}
+
+.face-verso {
+    background-color: #A7E9AF;
+    transform: rotateY(180deg); 
+}
+
+.face img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    .tabuleiro {
+        max-width: calc(6 * 117px + 5 * 40px);
+        margin-top: 100px; 
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+    .tabuleiro {
+        max-width: calc(4 * 117px + 3 * 40px);
+        margin-top: 170px; 
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    .tabuleiro {
+        max-width: calc(3 * 117px + 2 * 40px); 
+        margin-top: 300px; 
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 568px) {
+    .tabuleiro {
+        max-width: calc(2 * 117px + 1 * 40px);
+        margin-top: 500px; 
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 376px) {
+    .tabuleiro {
+        max-width: 177px;
+        margin-top: 1370px; 
+        margin-bottom: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 30px;
+    }
+}
+
